@@ -1,42 +1,36 @@
-// script.js
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que se recargue la página al hacer submit
 
-// Cargar credenciales desde el archivo JSON
-async function loadCredentials() {
-    try {
-        const response = await fetch('users.json'); // Ruta del archivo JSON
-        if (!response.ok) throw new Error('Error al cargar las credenciales.');
-        return await response.json(); // Devolver datos como objeto
-    } catch (error) {
-        console.error('Error:', error);
-        return []; // En caso de error, devolver un array vacío
-    }
-}
-
-// Manejar el evento de envío del formulario
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
-
-    // Cargar credenciales desde el archivo JSON
-    const credentials = await loadCredentials();
-
-    // Obtener los valores introducidos por el usuario
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+    
+    const users = [
+        {
+            "username": "juano",
+            "password": "juano123" 
+        },
+        {
+            "username": "alberto",
+            "password": "alberto123" 
+        }
+    ];
 
-    // Comprobar si las credenciales coinciden
-    const validUser = credentials.find(user => user.username === username && user.password === password);
+    // Buscar usuario en la lista
+    const user = users.find(u => u.username === username);
 
-    // Mostrar mensajes según el resultado
-    const messageElement = document.getElementById('message');
-    if (validUser) {
-        messageElement.style.color = 'green';
-        messageElement.textContent = 'Inicio de sesión exitoso.';
-        // Redirigir a otra página (opcional)
-        setTimeout(() => {
-            window.location.href = "dashboard.html"; // Cambiar ruta según tu página de destino
-        }, 1000);
+    if (user) {
+        // Comprobar si la contraseña introducida coincide con la almacenada
+        if (user.password === password) {
+            document.getElementById('message').textContent = "¡Acceso concedido!";
+            document.getElementById('message').style.color = "green";
+
+            window.location.href = "menu.html"; // Redirige al menú
+        } else {
+            document.getElementById('message').textContent = "Contraseña incorrecta.";
+            document.getElementById('message').style.color = "red";
+        }
     } else {
-        messageElement.style.color = 'red';
-        messageElement.textContent = 'Usuario o contraseña incorrectos.';
+        document.getElementById('message').textContent = "Usuario no encontrado.";
+        document.getElementById('message').style.color = "red";
     }
 });
