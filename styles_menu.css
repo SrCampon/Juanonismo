@@ -1,0 +1,113 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Para centrar todo correctamente */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo claro */
+    overflow-x: hidden; /* Evita scroll lateral inesperado */
+}
+
+/* Contenedor principal */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Toma toda la altura de la pantalla */
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el fondo fijo */
+    color: white;
+}
+
+/* Estilo del menú */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espaciado entre los botones */
+}
+
+.menu li {
+    margin: 0; /* Elimina margen adicional */
+}
+
+/* Botones como enlaces */
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #555; /* Color del botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover en botones */
+.menu a:hover {
+    background-color: #777;
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Secciones del contenido */
+main {
+    padding: 20px;
+}
+
+main section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+main section h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor principal de los miembros */
+.miembros-container {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra las filas horizontalmente */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 20px;
+}
+
+/* Cada miembro */
+.miembro {
+    display: flex;
+    flex-direction: column; /* Imagen arriba, descripción abajo */
+    align-items: center; /* Centra el contenido */
+    text-align: center;
+    max-width: 300px; /* Ancho máximo de cada bloque */
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Imagen del miembro */
+.miembro img {
+    width: 100%; /* Ancho adaptado al contenedor */
+    max-width: 200px; /* Limitar tamaño de la imagen */
+    height: auto; /* Mantener proporción */
+    border-radius: 50%; /* Convertir en círculo */
+    margin-bottom: 10px; /* Espacio con el texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra en la imagen */
+}
+
+/* Descripción del miembro */
+.miembro p {
+    margin: 0;
+    color: #333; /* Color del texto */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
