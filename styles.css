@@ -1,4 +1,10 @@
 /* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('img/fondo.jpg');
@@ -8,8 +14,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    overflow: hidden; /* Para evitar que aparezca la barra de desplazamiento */
 }
 
 .login-container {
@@ -17,7 +23,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 90%;  /* Ajusta el ancho para que sea más flexible */
+    max-width: 300px;  /* Máximo ancho */
     text-align: center;
 }
 
