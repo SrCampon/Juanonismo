@@ -11,21 +11,39 @@ body {
     background-position: center; 
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column; /* Para alinear elementos verticalmente */
-    justify-content: flex-start; /* Mantener los elementos al inicio */
-    align-items: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     min-height: 100vh;
-    
 }
 
-.audio-container {
-    margin-top: 20px; /* Espacio desde el borde superior */
-    text-align: center; /* Centrar contenido interno */
+/* Estilos para el botón de reproducción */
+#playButton {
+    margin-top: 40px;
+    padding: 15px 30px;  /* Espaciado interno (alto y ancho) */
+    font-size: 18px;      /* Tamaño de texto */
+    background-color: #4CAF50;  /* Color de fondo (verde) */
+    color: white;         /* Color del texto */
+    border: none;         /* Sin borde */
+    border-radius: 8px;   /* Bordes redondeados */
+    cursor: pointer;     /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos de transición */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para un efecto 3D */
+}
+
+#playButton:hover {
+    background-color: #45a049;  /* Cambiar color de fondo al pasar el mouse */
+    transform: scale(1.05);      /* Aumentar ligeramente el tamaño al pasar el mouse */
+}
+
+#playButton:active {
+    background-color: #388e3c;  /* Cambiar color de fondo cuando se presiona */
+    transform: scale(1);         /* Reducir el tamaño cuando se presiona */
 }
 
 audio {
-    max-width: 80%; /* Control del tamaño del reproductor */ 
-    border-radius: 8px; /* Borde redondeado */
-    padding: 50px; /* Espaciado interno */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo del reproductor */
+    max-width: 80%;
+    border-radius: 8px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
