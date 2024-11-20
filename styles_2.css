@@ -15,7 +15,7 @@ body {
     justify-content: flex-start; /* Mantener los elementos al inicio */
     align-items: center; /* Centrar horizontalmente */
     min-height: 100vh;
-    overflow: hidden;
+    
 }
 
 .audio-container {
