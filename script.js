@@ -6,10 +6,10 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
  
 
     const users = [
-        /*{
+        {
             "username": "juano",
             "password": "juano123" 
-        },*/
+        },
         {
             "username": "alberto",
             "password": "alberto123" 
