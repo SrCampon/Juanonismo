@@ -8,7 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const users = [
         {
             "username": "juano",
-            "password": "juano123" 
+            "password": "sesion" 
         },
         {
             "username": "alberto",
